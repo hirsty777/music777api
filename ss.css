@@ -163,9 +163,16 @@ audio{
 		
 	}
 }
-@media only screen and (max-width:350px){
+
+@media only screen and (max-width:355px){
 
 	#enterBTN{
 		position: absolute;
+		top:1rem;
+		left:25vw;
+	}
+	#inputValue{
+		position: absolute;
+		left:5vw;
 	}
 }
