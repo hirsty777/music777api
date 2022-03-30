@@ -9,31 +9,32 @@ const juli=document.querySelector('.uli');
 var ishidden=true;
 var x=0;
 
-// window.onload=fetchTopSongsOfDay();
+window.onload=fetchTopSongsOfDay();
 
-// async function fetchTopSongsOfDay(){
-//     await fetch(`https://api.napster.com/v2.2/tracks/top?range=day`,{
+async function fetchTopSongsOfDay(){
+    jaudio.innerHTML='';
+    await fetch(`https://api.napster.com/v2.2/tracks/top?range=day`,{
         
-//         method:'GET',
-//         headers:{
-//             'apikey':'N2EwNWJiZWUtOGVkMi00YmJjLTgwOWMtY2FiMWQ3MDI1ZjYx'
-//         }
-//     }).then(res=>res.json())
-//     .then(function aa(res){
+        method:'GET',
+        headers:{
+            'apikey':'N2EwNWJiZWUtOGVkMi00YmJjLTgwOWMtY2FiMWQ3MDI1ZjYx'
+        }
+    }).then(res=>res.json())
+    .then(function aa(res){
 
-//         for(var i=0;i<res.tracks.length;i++){
-//         jaudio.innerHTML+=`
-//         <div class="box">
-//         <img src="https://api.napster.com/imageserver/v2/artists/${res.tracks[i].artistId}/images/356x237.jpg">
-//         <span class="subtitle">${res.tracks[i].artistName}</span>
-//         <span class="title">${res.tracks[i].name}</span>
-//         <audio src="${res.tracks[i].previewURL}"controls></audio>   
-//         </div>
-//         `
-//         }
-//         console.log(res);
-//     });
-// };
+        for(var i=0;i<res.tracks.length;i++){
+        jaudio.innerHTML+=`
+        <div class="box">
+        <img src="https://api.napster.com/imageserver/v2/artists/${res.tracks[i].artistId}/images/356x237.jpg">
+        <span class="subtitle">${res.tracks[i].artistName}</span>
+        <span class="title">${res.tracks[i].name}</span>
+        <audio src="${res.tracks[i].previewURL}"controls></audio>   
+        </div>
+        `
+        }
+      //  console.log(res);
+    });
+};
 
 
 

@@ -304,6 +304,9 @@ audio{
 
 /*hamburger menu toogle*/
 @media only screen and (max-width:500px){
+	body{
+		overflow: hidden;
+	}
 	#search{
 		position: relative;
 		margin-left: 27%;
