@@ -5,22 +5,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="ss.css">
-  <link href='https://css.gg/music-note.css' rel='stylesheet'>
   <title>Music Is Life</title>
 </head>
 <body>
- 
+
+
+   <div id="test">
+  <label for="check" class="dontshow">
+    <input type="checkbox" id="check" /> 
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</div>
+
+<div class="navBar show">
+     
+    <div class="topTracks">
+    <span id="topTracks" onclick="TopTracks()">Top Tracks</span>
+        <div class="uli hiden">
+          <span class="liu" onclick="TopOfTheDay()">Top:Day</span>
+          <span class="liu" onclick="TopOfTheWeek()">Top:Week</span>
+          <span class="liu" onclick="TopOfTheMonth()">Top:Month </span>
+          <span class="liu" onclick="TopOfTheYear()">Top:Year</span>
+        </div>  
+  </div>
+
+    <div class="topAlbums">
+      <span id="topAlbums" onclick="fetchTopAlbums()">Top Albums</span>
+      </div>
+
+      <div class="Genres">
+        <span id="Genres" onclick="genres()">Genres</span>
+        </div>
+
+     
+
+
+</div>
+
+
+
  <div id="search">
  <input type="text" onfocus="this.value=''" id="inputValue" placeholder="enter song or artist name">
  <button type="button" id="enterBTN">Search</button>
-
  </div>
 
+ <div class="topText">
+   <span id="topText">Top Of The Day</span>
+ </div>
 
  <div id="audio">
-  
  </div>
-  
+ 
+
 
 
   <script src="js.js"></script>

@@ -2,8 +2,13 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	
 }
 
+
+
+
+/*scrol barr==========*/
 ::-webkit-scrollbar{
 	width: 1rem;
 }
@@ -24,10 +29,127 @@ body{
 	background: #aa4b6b;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+}
+
+/**/
+.dontshow{
+	visibility: hidden;
+}
+
+
+/*navbar==================================================*/
+.navBar{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: -0.5rem;
+	left:-0.5rem;
+    width: 100%;
+    height: 3rem;
+	display: grid;
+	grid-template-columns:auto  auto auto;
+	justify-content: center;
+	column-gap: 5rem;
+	align-items: center;
+	
+}
+
+.topTracks{
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background: #870000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+	outline: 2px solid rgb(0, 0, 0);
+}
+
+/*dropdown list for top tracks===================================*/
+.topTracks .uli{
+	z-index: 99;
+	position: absolute;
+	top: 3rem;
+	list-style: none;
+	width: 7rem;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	background: #870000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+	outline: 2px solid rgb(0, 0, 0);
+}
+
+.liu{
+	display: flex;
+	margin-top: 0.4rem;
+}
+.hiden{
+
+     display: none !important;
+
+}
+
+#topTracks{
+	font-size: 1.3rem;
+	font-family: Copperplate;
+	font-weight: bold;
+
+}
+
+.topAlbums{
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background: #870000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+	outline: 2px solid rgb(0, 0, 0);
+}
+#topAlbums{
+	cursor: pointer;
+	font-size: 1.3rem;
+	font-family: Copperplate;
+	font-weight: bold;
+
+}
+.Genres{
+	cursor:pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background: #870000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+	outline: 2px solid rgb(0, 0, 0);
+	
+}
+#Genres{
+	cursor: pointer;
+	font-size: 1.3rem;
+	font-family: Copperplate;
+	font-weight: bold;
 
 }
 
 
+
+/*=========================================================*/
+
+
+/* search button area=========================*/
 #search{
 	position: relative;
 	margin-left: 50%;
@@ -36,6 +158,7 @@ body{
 }
 
 #inputValue{
+	font-family:cursive;
     padding:0.5rem;
     border-radius: 0.5rem;
 	outline: none;
@@ -46,17 +169,20 @@ body{
 	box-sizing: border-box;
 	outline: 2px solid rgb(0, 0, 0);
 	background: #870000;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
 }
 #inputValue:focus{
+	font-family:cursive;
     outline: 2px solid rgb(36, 83, 11);
 }
 
 
 #enterBTN{
-	margin-top: 2rem;
+	font-family:cursive;
+	cursor: pointer;
+	margin-top: 3.5rem;
 	margin-left: 0.2rem;
     padding:0.5rem;
 	border-radius: 0.5rem;
@@ -68,8 +194,28 @@ background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, F
     color: white;
 	outline: 2px solid rgb(0, 0, 0);
 }
+/* end of search button area=========================*/
 
 
+
+/* top of text area====================================*/
+.topText{
+	position: relative;
+	margin-left: 50%;
+	width: 13rem;
+	height: 4rem;
+	transform: translate(-50%);
+	margin-top: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#topText{
+	font-size: 1.5rem;
+	font-weight: bolder;
+}
+
+/* end top of text area====================================*/
 
 #audio{  
 	
@@ -82,7 +228,7 @@ background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, F
 }
 
 .box{
-	
+	position: relative;
 	margin-top: 6rem;
 	border-radius: 1.6rem;
   	width: 18.7rem;
@@ -101,7 +247,8 @@ background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, F
 }
 
 audio{
-	margin-top:14.5rem;
+	position: absolute;
+	bottom: 0;
 	
 }
 .subtitle{
@@ -109,16 +256,22 @@ audio{
 	justify-content: center;
 	color: white;
 
+
 }
 .title{
-    
-	display: flex;
-	justify-content: center;
+    display: flex;
 	color: red;
+	margin-top:1rem;
+	justify-content: center;
 }
 
 
 
+
+
+
+
+/*meadia q==============================================*/
 
 @media only screen and (max-width:850px){
 
@@ -147,32 +300,165 @@ audio{
 		
 	}
 }
+
+
+/*hamburger menu toogle*/
+@media only screen and (max-width:500px){
+	#search{
+		position: relative;
+		margin-left: 27%;
+		margin-top: -3rem;
+		
+	}
+    .navBar{
+		z-index: 999;
+		display: grid;
+		grid-template-columns: auto;
+		width:100%;
+		height:14rem;
+		background: #c94b4b;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+	.topTracks .uli{
+		top:3.5rem;
+		width: 5.5rem;
+	}
+	#search{
+		position: relative;
+	}
+	#inputValue{
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		top: 0;
+	}
+	#enterBTN{
+        position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		top: 0;
+	}
+
+
+
+	#topTracks{
+		font-size: 0.9rem;
+	}
+	#topAlbums{
+		font-size: 0.8rem;
+	}
+	#Genres{
+		font-size: 0.8rem;
+	}
+	
+	.show{
+		display: none !important;
+		
+	}
+	
+
+	/*humburger toogle area=================================*/
+	.dontshow{
+        z-index: 9999;
+	    visibility: visible;
+		display:flex;
+		 flex-direction:column;
+		 width:70px;
+		 cursor:pointer;
+	   }
+	   
+	   .dontshow span{
+		z-index: 9999;
+		 background: #fff;
+		 border-radius:10px;
+		 height:7px;
+		 margin: 7px 0;
+		 transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	   
+	   }
+	   
+	   
+	   .dontshow span:nth-of-type(1){
+		 width:50%;
+		 
+	   }
+	   
+	   .dontshow span:nth-of-type(2){
+		 width:100%;
+	   }
+	   
+	   
+	   .dontshow span:nth-of-type(3){
+		 width:75%;
+		
+	   }
+	   
+	   
+	   #check{
+		 display:none;
+	   }
+	   
+	   
+	   .dontshow input[type="checkbox"]:checked ~ span:nth-of-type(1){
+		 transform-origin:bottom;
+		 transform:rotatez(45deg) translate(8px,0px)
+	   }
+	   
+	   
+	   .dontshow input[type="checkbox"]:checked ~ span:nth-of-type(2){
+		 
+		 transform-origin:top;
+		 transform:rotatez(-45deg)
+	   }
+	   
+	   
+	   .dontshow input[type="checkbox"]:checked ~ span:nth-of-type(3){
+		 
+		 transform-origin:bottom;
+		 width:50%;
+		 transform: translate(30px,-11px) rotatez(45deg);
+	   
+	   }
+
+	   .topText{
+		
+		margin-top: 6.7rem;
+	    }
+	
+}
+
+
+
+
+
 @media only screen and (max-width:475px){
 
 	#search{
 		position: relative;
-		margin-left: 33%;
+		margin-left: 26%;
 		
 	}
 }
-@media only screen and (max-width:400px){
+@media only screen and (max-width:416px){
 
 	#search{
 		position: relative;
-		margin-left: 27%;
-		
-	}
-}
-
-@media only screen and (max-width:355px){
-
-	#enterBTN{
-		position: absolute;
-		top:1rem;
-		left:25vw;
+		margin-left: 25%;
 	}
 	#inputValue{
 		position: absolute;
-		left:5vw;
+		left: 50%;
+		transform: translate(-50%);
+		top: 0;
+	}
+	#enterBTN{
+        position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		top: 0;
 	}
 }
+
+
