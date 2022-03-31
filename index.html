@@ -9,19 +9,21 @@
 </head>
 <body>
 
+<!--==============================================-->
+  <div id="test">
+   <label for="check" class="dontshow">
+    <input type="checkbox" id="check"/> 
+    <span></span>
+    <span></span>
+    <span></span>
+   </label>
+  </div>
+<!--///////////////////////////////////////////////-->
 
-   <div id="test">
-  <label for="check" class="dontshow">
-    <input type="checkbox" id="check" /> 
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-</div>
-
+<!--==============================================-->
 <div class="navBar show">
      
-    <div class="topTracks">
+  <div class="topTracks">
     <span id="topTracks" onclick="TopTracks()">Top Tracks</span>
         <div class="uli hiden">
           <span class="liu" onclick="TopOfTheDay()">Top:Day</span>
@@ -33,33 +35,40 @@
 
     <div class="topAlbums">
       <span id="topAlbums" onclick="fetchTopAlbums()">Top Albums</span>
-      </div>
+    </div>
 
       <div class="Genres">
         <span id="Genres" onclick="genres()">Genres</span>
-        </div>
-
-     
-
+      </div>
 
 </div>
+<!--//////////////////////////////////////////////////=-->
 
 
-
+<!--==============================================-->
  <div id="search">
- <input type="text" onfocus="this.value=''" id="inputValue" placeholder="enter song or artist name">
- <button type="button" id="enterBTN">Search</button>
+  <input type="text" onfocus="this.value=''" id="inputValue" placeholder="enter song or artist name">
+  <button type="button" id="enterBTN">Search</button>
  </div>
+<!--////////////////////////////////////////////////=-->
 
+<!--==============================================-->
  <div class="topText">
    <span id="topText">Top Of The Day</span>
  </div>
+<!--///////////////////////////////////////////////-->
 
+<!--=============place to render songs============-->
  <div id="audio">
  </div>
- 
+<!--//////////////////////////////////////////////-->
 
-
+<!--================loading animation=============-->
+<div class="center">
+    <div class="loader"></div>
+    <span class="loaderText">loading</span>
+</div>
+<!--//////////////////////////////////////////////-->
 
   <script src="js.js"></script>
 </body>

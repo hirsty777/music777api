@@ -2,6 +2,7 @@ var jinputValue=document.getElementById('inputValue');
 const jaudio=document.getElementById('audio');
 const jenterBTN=document.getElementById('enterBTN');
 const jtopText=document.getElementById("topText");
+const jcenter=document.querySelector('.center');
 
 jaudio.innerHTML='';
 
@@ -10,7 +11,6 @@ var ishidden=true;
 var x=0;
 
 window.onload=fetchTopSongsOfDay();
-
 async function fetchTopSongsOfDay(){
     jaudio.innerHTML='';
     await fetch(`https://api.napster.com/v2.2/tracks/top?range=day`,{
@@ -34,6 +34,7 @@ async function fetchTopSongsOfDay(){
         }
       //  console.log(res);
     });
+    jcenter.style.visibility='hidden';
 };
 
 
@@ -92,9 +93,12 @@ const jtest=document.getElementById('test');
 //fetch top songs
 //fetch top songs of the day
 async function TopOfTheDay(){
+    jcenter.style.visibility='visible';
     jtopText.innerHTML='Top Of The Day';
     juli.classList.add("hiden");
     ishidden=true;
+    document.getElementById('check').checked=false;
+    jnavBAr.classList.add('show');
     
     jaudio.innerHTML='';
     await fetch(`https://api.napster.com/v2.2/tracks/top?range=day`,{
@@ -116,15 +120,18 @@ async function TopOfTheDay(){
         </div>
         `
         }
-        console.log(res);
+       // console.log(res);
     });
-  
+    jcenter.style.visibility='hidden';
 };
 //fetch top songs of the Week
 async function TopOfTheWeek(){
+    jcenter.style.visibility='visible';
     jtopText.innerHTML='Top Of The Week';
     juli.classList.add("hiden");
     ishidden=true;
+    document.getElementById('check').checked=false;
+    jnavBAr.classList.add('show');
 
     jaudio.innerHTML='';
     await fetch(`https://api.napster.com/v2.2/tracks/top?range=week`,{
@@ -146,16 +153,20 @@ async function TopOfTheWeek(){
         </div>
         `
         }
-        console.log(res);
+       // console.log(res);
     });
-  
+    jcenter.style.visibility='hidden';
 };
 
 //fetch top songs of the Month
 async function TopOfTheMonth(){
+    jcenter.style.visibility='visible';
     jtopText.innerHTML='Top Of The Month';
     juli.classList.add("hiden");
     ishidden=true;
+    document.getElementById('check').checked=false;
+    jnavBAr.classList.add('show');
+    
 
     jaudio.innerHTML='';
     await fetch(`https://api.napster.com/v2.2/tracks/top?range=month`,{
@@ -177,16 +188,19 @@ async function TopOfTheMonth(){
         </div>
         `
         }
-        console.log(res);
+        //console.log(res);
     });
-  
+    jcenter.style.visibility='hidden';
 };
 
 //fetch top songs of the Year
 async function TopOfTheYear(){
+    jcenter.style.visibility='visible';
     jtopText.innerHTML='Top Of The Year';
     juli.classList.add("hiden");
     ishidden=true;
+    document.getElementById('check').checked=false;
+    jnavBAr.classList.add('show');
 
     jaudio.innerHTML='';
     await fetch(`https://api.napster.com/v2.2/tracks/top?range=year`,{
@@ -210,7 +224,7 @@ async function TopOfTheYear(){
         }
       //  console.log(res);
     });
-  
+    jcenter.style.visibility='hidden';
 };
 
 
@@ -219,6 +233,7 @@ async function TopOfTheYear(){
 
 //fetch search result and deploy ===================================
 jenterBTN.addEventListener('click',async function(){
+    jcenter.style.visibility='visible';
     jaudio.innerHTML='';
     jtopText.innerHTML=jinputValue.value;
 
@@ -243,5 +258,5 @@ jenterBTN.addEventListener('click',async function(){
         }
         //console.log(res.search.data);
     })
-    
+    jcenter.style.visibility='hidden';
 });

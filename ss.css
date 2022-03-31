@@ -26,13 +26,13 @@ body{
 	width:100%;
 	min-height: 100vh;
 	overflow-x: hidden;
-	background: #aa4b6b;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #200122;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #6f0000, #200122);  
+	background: linear-gradient(to right, #6f0000, #200122); 
 	
 }
 
-/**/
+/* hides humburger munu before it goes down 500px*/
 .dontshow{
 	visibility: hidden;
 }
@@ -158,8 +158,8 @@ body{
 }
 
 #inputValue{
-	font-family:cursive;
-    padding:0.5rem;
+	font-family:georgia,serif;
+    padding:0.67rem;
     border-radius: 0.5rem;
 	outline: none;
 	border: none;
@@ -174,7 +174,7 @@ body{
     color: white;
 }
 #inputValue:focus{
-	font-family:cursive;
+	font-family:georgia,serif;
     outline: 2px solid rgb(36, 83, 11);
 }
 
@@ -202,7 +202,7 @@ body{
 .topText{
 	position: relative;
 	margin-left: 50%;
-	width: 13rem;
+	width: 15rem;
 	height: 4rem;
 	transform: translate(-50%);
 	margin-top: 0.7rem;
@@ -211,7 +211,8 @@ body{
 	justify-content: center;
 }
 #topText{
-	font-size: 1.5rem;
+	font-family:cursive;
+	font-size: 1.4rem;
 	font-weight: bolder;
 }
 
@@ -231,22 +232,23 @@ body{
 	position: relative;
 	margin-top: 6rem;
 	border-radius: 1.6rem;
-  	width: 18.7rem;
-	height: 20rem;
+	width: 15rem;
+	height: 16rem;
 	box-shadow: 0px 0px 1rem black,0px 0px 1rem black,
 	0px 0px 1rem black;
 }
 
 .box img{
 	position: absolute;
-	width: 18.7rem;
-	height: 20rem;
+	width: 15rem;
+	height: 16rem;
 	z-index: -999;
 	border-radius: 1.6rem;
 
 }
 
 audio{
+	width: 15rem;
 	position: absolute;
 	bottom: 0;
 	
@@ -265,6 +267,81 @@ audio{
 	justify-content: center;
 }
 
+
+
+/*loader area===============================================*/
+.center{
+	visibility: visible;
+	position: absolute;
+	left: 50%;
+	top: 18rem;
+	transform: translate(-50%);
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+}
+.loader{
+	position: absolute;
+	width: 9rem;
+	height: 9rem;
+	background-color: transparent;
+	border-radius: 50%;
+	animation: loaderAnimation 2s linear infinite;
+}
+@keyframes loaderAnimation{
+  0%{
+	  transform: rotate(0deg);
+	  box-shadow: 2px 5px 2px rgb(0, 161, 13);
+  }
+  50%{
+	transform: rotate(180deg);
+	box-shadow: 2px 5px 2px rgb(22, 0, 146);
+	}
+  100%{
+	transform: rotate(360deg);
+	box-shadow: 2px 5px 2px rgb(115, 163, 4);
+	}
+}
+
+
+.loader::before{
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow:  0 0 0.3rem rgb(221, 221, 221);
+}
+.loaderText{
+	cursor: default;
+	z-index: 33;
+	font-size: 1.4rem;
+    color: rgb(0, 0, 0);
+}
+.loaderText::after{
+	position: absolute;
+	content: '';
+	animation: textAnimation 2s linear infinite;
+}
+@keyframes textAnimation{
+	0%{
+		content: '';
+	}
+	25%{
+		content: '.';
+	  }
+	65%{
+		content: '..';
+	  }
+	100%{
+		content: '...';
+	  }
+  }
+/*end of loader area===============================================*/
 
 
 
@@ -304,6 +381,9 @@ audio{
 
 /*hamburger menu toogle*/
 @media only screen and (max-width:500px){
+	#audio{  	
+		grid-template-columns:auto;
+	}
 	
 	#search{
 		position: relative;
@@ -317,9 +397,7 @@ audio{
 		grid-template-columns: auto;
 		width:100%;
 		height:14rem;
-		background: #c94b4b;  /* fallback for old browsers */
-		background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background-color: rgba(0, 0, 0, 0.733);
 	}
 
 	.topTracks .uli{
@@ -372,38 +450,32 @@ audio{
 	   
 	   .dontshow span{
 		z-index: 9999;
-		 background: #fff;
+		 background: rgb(255, 255, 255);
 		 border-radius:10px;
 		 height:7px;
 		 margin: 7px 0;
 		 transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
 	   
-	   }
-	   
-	   
+	   } 
 	   .dontshow span:nth-of-type(1){
 		 width:50%;
 		 
 	   }
-	   
 	   .dontshow span:nth-of-type(2){
 		 width:100%;
 	   }
-	   
 	   
 	   .dontshow span:nth-of-type(3){
 		 width:75%;
 		
 	   }
-	   
-	   
 	   #check{
 		 display:none;
 	   }
 	   
-	   
 	   .dontshow input[type="checkbox"]:checked ~ span:nth-of-type(1){
 		 transform-origin:bottom;
+		 background-color: rgb(255, 255, 255);
 		 transform:rotatez(45deg) translate(8px,0px)
 	   }
 	   
@@ -411,6 +483,7 @@ audio{
 	   .dontshow input[type="checkbox"]:checked ~ span:nth-of-type(2){
 		 
 		 transform-origin:top;
+		 background-color: rgb(255, 255, 255);
 		 transform:rotatez(-45deg)
 	   }
 	   
@@ -419,6 +492,7 @@ audio{
 		 
 		 transform-origin:bottom;
 		 width:50%;
+		 background-color: rgb(255, 255, 255);
 		 transform: translate(30px,-11px) rotatez(45deg);
 	   
 	   }
