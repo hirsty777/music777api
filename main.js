@@ -3,13 +3,18 @@ const jaudio=document.getElementById('audio');
 const jenterBTN=document.getElementById('enterBTN');
 const jtopText=document.getElementById("topText");
 const jcenter=document.querySelector('.center');
+const jtest=document.getElementById('test');
 
 jaudio.innerHTML='';
 
 const juli=document.querySelector('.uli');
+const jgauli=document.querySelector('.Guli');
+const jggauli=document.querySelector('.GGuli');
 var ishidden=true;
 var x=0;
 
+
+// load top song of day on load=================================
 window.onload=fetchTopSongsOfDay();
 async function fetchTopSongsOfDay(){
     jaudio.innerHTML='';
@@ -39,56 +44,32 @@ async function fetchTopSongsOfDay(){
 
 
 
-
-
-
-
 //togle hamburger menu=========================
 const jnavBAr=document.querySelector('.navBar');
 const jcheck=document.getElementById('check');
 jcheck.addEventListener('click',function(){
        jnavBAr.classList.toggle('show');
-       
+       juli.classList.add('hiden');
+       jgauli.classList.add('hiden');
+       jggauli.classList.add('hiden');
 });
 
-
+//shows hides top tracks
 function  TopTracks(){
-    if(ishidden){
-        juli.classList.remove("hiden");
-        ishidden=false;
-    }else{
-        juli.classList.add("hiden");
-        ishidden=true;
-    };
+       juli.classList.toggle('hiden');
+       jgauli.classList.add('hiden');
+       jggauli.classList.add('hiden');
+}; 
+//shows hides genres===================
+function  genres(){
+    juli.classList.add('hiden');
+    jgauli.classList.toggle('hiden');
+    jggauli.classList.toggle('hiden');
+    
 };   
+//======================================
     
    
-    // jaudio.innerHTML='';
-    // await fetch(`https://api.napster.com/v2.2/tracks/top?range=week`,{
-        
-    //     method:'GET',
-    //     headers:{
-    //         'apikey':'N2EwNWJiZWUtOGVkMi00YmJjLTgwOWMtY2FiMWQ3MDI1ZjYx'
-    //     }
-    // }).then(res=>res.json())
-    // .then(function aa(res){
-
-    //     for(var i=0;i<res.tracks.length;i++){
-    //     jaudio.innerHTML+=`
-    //     <div class="box">
-    //     <img src="https://api.napster.com/imageserver/v2/artists/${res.tracks[i].artistId}/images/356x237.jpg">
-    //     <span class="subtitle">${res.tracks[i].artistName}</span>
-    //     <span class="title">${res.tracks[i].name}</span>
-    //     <audio src="${res.tracks[i].previewURL}"controls></audio>   
-    //     </div>
-    //     `
-    //     }
-    //     console.log(res);
-    // })
-      
-    
-const jtest=document.getElementById('test');
-
 
 //fetch top songs
 //fetch top songs of the day
@@ -229,6 +210,37 @@ async function TopOfTheYear(){
 
 
 
+//fetch top albums==========================================
+
+async function Pop(){
+    await fetch(`https://api.napster.com/v2.2/genres`,{
+        method:'GET',
+        headers:{
+            'apikey':'N2EwNWJiZWUtOGVkMi00YmJjLTgwOWMtY2FiMWQ3MDI1ZjYx'
+        }
+    }).then(res=>res.json())
+    .then(function bb(res){
+        console.log(res)
+    })  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //fetch search result and deploy ===================================
@@ -260,3 +272,6 @@ jenterBTN.addEventListener('click',async function(){
     })
     jcenter.style.visibility='hidden';
 });
+
+
+
